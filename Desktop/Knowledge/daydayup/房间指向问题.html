@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		var arr = [];
+		var pointer = arr;
+		var tmp = [];
+		var inner = {
+			data:"yideng",
+			child:tmp
+		};
+		arr.push(inner);
+		pointer = tmp;
+		pointer.push(123);
+		console.log(arr);
+	</script>
+	<body>
+	</body>
+</html>

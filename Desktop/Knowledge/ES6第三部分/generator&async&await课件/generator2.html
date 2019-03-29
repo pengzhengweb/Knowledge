@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        function * gen(){
+            yield 'welcome';
+            yield 'to';
+            return '牧码人';
+        }
+        let g1 = gen();
+        console.log(g1.next()); //{value: "welcome", done: false}
+        console.log(g1.next()); //{value: "to", done: false}
+        console.log(g1.next()); //{value: "牧码人", done: true}
+
+        console.log(g1.next());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        /* Person.prototype.showName = function(){
+            return `名字为: ${this.name}`;
+        };
+        Person.prototype.showAge = function(){
+            return `年龄为: ${this.age}`;
+        }; */
+        Object.assign(Person.prototype,{
+            showName(){
+                return `名字为: ${this.name}`;
+            },
+            showAge(){
+                return `年龄为: ${this.age}`;
+            }
+        });
+
+        let p1 = new Person('Strive', 18);
+        console.log(p1.showName());
+        console.log(p1.showAge());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        function fn(){
+            return '我是函数';
+        }
+
+        let newFn = new Proxy(fn, {
+            apply(){
+                return '函数么?';
+            }
+        });
+
+        console.log(newFn());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

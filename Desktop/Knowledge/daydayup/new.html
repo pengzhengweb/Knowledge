@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		var event = [{type1:"sdff",type2:"adfdf",type3:"adfdsdfsdff"},{type1:"1",type2:"2",type3:"a3"},{type1:"4",type2:"5",type3:"a3"}];
+		
+		var arr = [];
+		for(var i =0;i<event.length;i++){
+			var son = new Object();
+			son.name = event[i].type1;
+			son.age = event[i].type2;
+			son.sex = event[i].type3;
+			arr.push(son);
+		}
+		console.log(arr);
+	</script>
+	<body>
+	</body>
+</html>

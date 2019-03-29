@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        let json = {
+            a:1,
+            b:2
+        };
+
+        let newJson = new Proxy(json, {
+            deleteProperty(target, property){
+                console.log(`您要删除${property}属性`);
+                //TODO
+                delete target[property];
+            }
+        });
+
+        delete newJson.a;
+
+        console.log(json);//{b:2}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

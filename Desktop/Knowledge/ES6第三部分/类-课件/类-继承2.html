@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        //父类
+        class Person{
+            constructor(name){
+                this.name = name;
+            }
+            showName(){
+                return `名字为: ${this.name}`;
+            }
+        }
+
+        //子类
+        class Student extends Person{
+            
+        }
+        
+
+        //调用
+
+        let stu1 = new Student('Strive','逃学');
+        console.log(stu1.showName());//名字为：Strive
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

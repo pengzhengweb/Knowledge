@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+//     setTimeout(function() {
+//   console.log(1)
+// }, 0);
+// console.log(6);
+// new Promise(function executor(resolve) {
+//   console.log(2);
+//   for( var i=0 ; i<10000 ; i++ ) {
+//     i == 9999 && resolve();
+//   }
+//   console.log(3);
+// }).then(function() {
+//   console.log(4);
+// });
+// console.log(5);
+
+
+
+setTimeout(function() {
+    console.log('timeout1');////5
+})
+
+new Promise(function(resolve) {
+    console.log('promise1'); ////1
+    for(var i = 0; i < 1000; i++) {
+        i == 99 && resolve();
+    }
+    console.log('promise2');/////2
+}).then(function() {
+    console.log('then1');/////4
+})
+
+console.log('global1');//////3
+</script>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		function sidEffecting(ary){
+			ary[0]=ary[2];
+		}
+		function yideng(a,b,c=3){
+			c=10
+			sidEffecting(arguments);
+			console.log(a+b+c) ;	
+		}
+		yideng(1,1,1);//12
+	</script>
+	<script>
+		function sidEffecting(ary){
+			ary[0]=ary[2];
+		}
+		function yideng(a,b,c=78){
+			c=10
+			sidEffecting(arguments);
+			console.log(a+b+c) ;	
+		}
+		yideng(1,1,1);//12
+	</script>
+	<script>
+		function sidEffecting(ary){
+			ary[0]=ary[2];
+		}
+		function yideng(a,b,c){
+			c=10
+			sidEffecting(...arguments);
+			console.log(a+b+c) ;	
+		}
+		yideng(1,1,1);//12
+	</script>
+	<script>
+		function sidEffecting(ary){
+			ary[0]=ary[2];
+		}
+		function yideng(a,b,c){
+			c=10
+			sidEffecting(arguments);
+			console.log(a+b+c) ;	
+		}
+		yideng(1,1,1);//21
+	</script>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        let str = '2018-03-20';
+
+        let reg = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/;
+
+        let {year, month ,day} = str.match(reg).groups;
+
+        console.log(year, month, day);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

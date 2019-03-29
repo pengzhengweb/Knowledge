@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        var id = 10;  //用var定义一个全局变量，属于window， let，const不同
+
+        let json={
+            id:1,
+            show:function(){
+                setTimeout(function(){
+                    alert(this.id);//没谁调用 所以10
+                },2000);
+            }
+        };
+
+        json.show();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

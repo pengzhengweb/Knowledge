@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    Array.prototype.method=function(){
+　　console.log(this.length);
+}
+var myArray=[1,2,4,5,6,7]
+myArray.name="数组"
+for (var index in myArray) {
+  console.log(myArray[index]);
+  
+  
+  //for in 会遍历数组中所有可枚举的属性，包括原型，例如上栗的原型方法method和name属性
+//所以for in更适合遍历对象，不要使用for in遍历数组。
+
+console.log("-------------");
+Array.prototype.method=function(){
+　　console.log(this.length);
+}
+var myArray=[1,2,4,5,6,7]
+myArray.name="数组";
+for (var value of myArray) {
+  console.log(value);
+}
+}
+
+//记住，for in遍历的是数组的索引（即键名），而for of遍历的是数组元素值。
+
+//for of遍历的只是数组内的元素，而不包括数组的原型属性method和索引name
+</script>
+<body>
+    
+</body>
+</html>

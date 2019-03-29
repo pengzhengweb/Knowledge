@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    var gLogNumber, gIncreaseNumber, gSetNumber;
+    
+    function setupSomeGlobals() {
+        // 局部变量num最后会保存在闭包中
+        var num = 42;
+        // 将一些对于函数的引用存储为全局变量
+        gLogNumber = function() { console.log(num); }
+        gIncreaseNumber = function() { num++; }
+        gSetNumber = function(x) { num = x; }
+    }
+    setupSomeGlobals();
+    gIncreaseNumber();
+    gLogNumber(); // 43
+    gSetNumber(5);
+    gLogNumber(); // 5
+
+    var oldLog = gLogNumber;
+    setupSomeGlobals();
+    gLogNumber(); // 42
+    oldLog() // 5
+</script>
+<body>
+    
+</body>
+</html>

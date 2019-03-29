@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        const DOM = new Proxy({},{
+            get(target, property){
+                //console.log(target, property);
+                //property DOM.xxx 里面的xxx
+                return function(attr={}, ...children){
+                    //console.log(attr, children);
+                    const el = document.createElement(property);
+
+                    //添加属性
+                    for(let key of Object.keys(attr)){
+                        el.setAttribute(key, attr[key]);
+                    }
+                    //添加子元素
+                    for(let child of children){
+                        if(typeof child == 'string'){
+                            child = document.createTextNode(child);
+                        }
+                        el.appendChild(child);
+                    }
+                    return el;
+                }
+            }
+        });
+
+        let oDiv = DOM.div({id:'div1',class:'aaa'},'我是div','呵呵呵');
+
+        console.log(oDiv);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

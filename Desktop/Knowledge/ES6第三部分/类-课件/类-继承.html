@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        //父类
+        function Person(name){
+            this.name = name;
+        }
+        Person.prototype.showName = function(){
+            return `名字是: ${this.name}`;
+        };
+
+        //子类
+        function Student(name,skill){
+            Person.call(this,name); //继承属性
+
+            this.skill = skill;
+        }
+        Student.prototype = new Person(); //继承方法
+        
+
+        //调用
+
+        let stu1 = new Student('Strive','逃学');
+        delete stu1.name;
+        console.log(stu1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

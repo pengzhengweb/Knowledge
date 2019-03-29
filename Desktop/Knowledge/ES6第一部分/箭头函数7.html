@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        /* function show(){
+            this.name='abc';
+        } */
+        let show = ()=>{
+            this.name='abc';
+        }
+
+        let s=new show();
+        alert(s.name);//Error:show is not a constructor箭头函数不可以当作构造函数使用
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

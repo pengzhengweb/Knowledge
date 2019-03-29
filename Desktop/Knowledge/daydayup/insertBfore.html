@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+   
+      
+      <script>
+      // Create a new, plain <span> element
+      var sp1 = (<ul>
+                 <li>1</li>
+                 <li>2</li>
+                 <li>3</li>
+                 <li>4</li>
+                </ul>);
+      
+      // Get a reference to the element, before we want to insert the element
+      var sp2 = document.getElementById("childElement");
+      // Get a reference to the parent element
+      var parentDiv = document.getElementById("parentElement");
+      
+      // Insert the new element into the DOM before sp2
+      parentDiv.insertBefore(sp1, sp2);
+      </script>
+</head>
+<body>
+    <div id="parentElement">
+        <span id="childElement">foo bar</span>
+      </div>
+</body>
+</html>

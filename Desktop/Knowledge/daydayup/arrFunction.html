@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function foo() {
+        console.log(this);//Object
+  setTimeout( () => {
+    console.log("id:", this.id);
+  },100);
+}
+
+//var id = 21; // 加入这行
+//表明了箭头函数的this月与call无关，永远指向外层函数的this;
+foo.call( { id: 42 } );
+</script>
+<body>
+    
+</body>
+</html>

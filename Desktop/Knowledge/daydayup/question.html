@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		/*1.function a(){
+					return 1
+					
+				};
+				var result = new a();
+				console.log(result);*/
+
+		/*2.var a = [0];
+		if(a){
+			console.log(a==true);
+		}else{
+			console.log("bcd");
+		}*/
+
+		/*		3.function test(){
+					console.log("out");
+				}
+				(function(){
+					if(false){
+						var test = function(){
+							console.log("in");
+						};
+					}
+					test();
+				})();*/
+		/*4.function fun(){
+			var name =2;
+			return{
+				name:3,
+				getName: function(){
+					return this.name;
+				},
+			};
+		};
+		var a3 = fun().getName;
+		console.log(a3()!==2);//true
+		//console.log(fun().getName());//3*/
+
+		/*5.console.log((function f(n){
+			        return ((n>1)?n*arguments.callee(n-1):n)
+		})(10))*/
+
+		/*6.var abc = {n:1};
+		abc.x =  abc = {n:2};
+		console.log(abc.x);//undefined
+		console.log(abc);*/
+
+		/*6.(function(){
+			try{
+				throw new Error();
+			}catch(x){
+				var x =1,y=2;
+				console.log(x);//1
+			}
+			console.log(x);//undefined
+			console.log(y);//2
+		})();*/
+		/*7.var arr = Array(3);
+		arr[0] = 2;
+		var result = arr.map(function(elem){
+			return '1';
+		});
+		console.log(result);*/
+		//console.log(['1', , ,][1]);
+		//alert(["1", empty × 2].toString()==["1", ,].toString());
+		//console.log(["1", empty]);
+		//console.log(JSON.stringify(['1', ,])==JSON.stringifty(['1',empty,empty]));
+	</script>
+	<script>
+		
+
+		function outer() {
+			var b = 1;
+
+			function inner() {
+				//var b = 3;
+				b++;
+				console.log(b)
+				
+			}
+			
+			return  inner();
+		}
+		outer();
+		//outer();
+		//outer();
+	</script>
+	<script>
+		var obj = {
+			a:1,
+			b:this.a,
+		};
+		console.log(obj.b);//undefined
+	</script>
+
+	<body>
+	</body>
+
+</html>

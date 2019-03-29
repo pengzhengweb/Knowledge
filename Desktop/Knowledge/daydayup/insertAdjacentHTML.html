@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<div id="one">one</div>
+	</body>
+	<script>		
+       //let div = `<div id="one">one</div>`;
+    //    let div = `<div id="three">three</div>`;
+	   var d1 = document.getElementById('one');
+	   let html = `<div id="two">two</div><div id="two">three</div>`;
+      d1.insertAdjacentHTML('beforebegin',html);
+       
+	</script>
+</html>

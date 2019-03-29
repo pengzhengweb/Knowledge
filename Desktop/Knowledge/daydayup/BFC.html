@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>margin 塌陷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+   
+</head>
+<style>
+   .wrapper{
+       margin-left:100px;
+       margin-top:100px;
+       width:100px;
+       height:100px;
+       background-color: blue;
+       /* border: 1px solid gray; 土方法，在wrapper加上边框可去除margin塌陷*/
+       /* overflow:hidden; 这个使用bfc的方法解决*/
+   }
+   .content{
+       margin-left:50px;
+       /* margin-top:40px; 这个设置多少（<100）都没意义*/
+       /* margin-top:101px; 这就有有效果了*/
+       
+       width:50px;
+       height:50px;
+       background-color: yellowgreen;
+   }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="content"></div>
+    </div>
+</body>
+</html>

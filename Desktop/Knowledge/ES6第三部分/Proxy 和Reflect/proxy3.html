@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        let obj = {
+            name:'Strive'
+        };
+
+        let newObj = new Proxy(obj, {
+            get(target, property){
+                if(property in target){
+                    return target[property];
+                }else{
+                    //throw new ReferenceError(`${property}属性不在此对象上`);
+                    console.warn(`${property}属性不在此对象上`);
+                    return '^_^';
+                }
+            }
+        });
+
+        console.log(newObj.name);
+        console.log(newObj.age);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>关于return</title>
+	</head>
+	<script>
+		var a = 5;
+		var b;
+		if(a > 4){
+			b = 4;
+			if(a>5){
+				b = 5;
+			}else{
+				return b;
+			}
+		}else{b;}
+		console.log(b);
+	</script>
+	<body>
+	</body>
+</html>

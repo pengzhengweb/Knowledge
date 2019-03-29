@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    // 声明构造函数
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    return {name:"wewe",age:23};
+}
+
+// 通过prototye属性，将方法挂载到原型对象上
+Person.prototype.getName = function() {
+    return this.name;
+}
+
+var p1 = new Person('tim', 10);
+var p2 = new Person('jak', 22);
+
+console.log(p1);
+</script>
+<body>
+    
+</body>
+</html>

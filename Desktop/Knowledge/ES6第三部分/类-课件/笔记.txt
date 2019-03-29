@@ -1,0 +1,97 @@
+程序中类
+
+ES6
+
+面向对象 ，类
+	属性
+	方法
+函数模拟
+
+人:  Person
+	属性: name
+	展示名字: showName
+
+     Person.prototype.showName
+ES5之前：
+	function Person(){
+		this.name='aaa';
+	}
+	Person.prototype.showName=function(){}
+
+ES6中变形:
+	class Person{
+		constructor(){
+			this.name = 'aaa';
+		} 
+		showName(){
+
+		}
+	}
+	--------------------------
+	const Person = class{}
+	------------------------------
+	let a = 'strive';
+	let b = 'method';
+
+	class Person{
+		[a+b](){
+			
+		}
+	}
+
+
+let aaa='aaa';
+let bbb='ddd';
+let json={
+	[aaa+bbb]:'welcome 51mmr.net'
+}
+
+注意： 
+1. ES6里面class没有提升功能，在ES5，用函数模拟可以，默认函数提升
+2. ES6里面this 比之前轻松多了
+
+
+矫正this:
+	1. fn.call(this指向谁, args1, args2....)
+	2. fn.apply(this指向谁, [args1, args2....])
+	3. fn.bind()
+------------------------------------------------------------
+class里面取值函数(getter), 存值函数(setter)
+------------------------------------------------------------
+静态方法: 就是类身上方法
+	static aaa(){
+
+	}
+
+	父类.aaa();
+------------------------------------------------------------
+
+父类
+子类
+------------------------------------------------------------
+继承:
+	之前:
+
+Person
+Student
+	
+	现在: extends
+	class Student extends Person{
+            
+             }
+------------------------------------------------------------
+拖拽
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

@@ -1,0 +1,23 @@
+!<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <script >
+        function person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        var obj = {name:"Asd",age:34};
+        person.call(obj);
+        console.log(obj);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

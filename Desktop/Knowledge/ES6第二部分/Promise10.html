@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        let status = 1;
+        let userLogin = (resolve, reject) =>{
+            setTimeout(()=>{
+                if(status == 1){
+                    resolve({data:'登录成功', msg:'xxx', token:'xxsadfsadfas'});
+                }else{
+                    reject('失败了');
+                }
+            },2000);
+        };
+
+        let getUserInfo = (resolve, reject) =>{
+            setTimeout(()=>{
+                if(status == 1){
+                    resolve({data:'获取用户信息成功', msg:'asdfasdf', token:'xxsadfsadfas'});
+                }else{
+                    reject('失败了');
+                }
+            },1000);
+        }
+
+        new Promise(userLogin).then(res=>{
+            console.log('用户登录成功');
+            return new Promise(getUserInfo);
+        }).then(res=>{
+            console.log('获取用户信息成功');
+            console.log(res);
+        })
+    </script>
+</head>
+<body>
+</body>
+</html>

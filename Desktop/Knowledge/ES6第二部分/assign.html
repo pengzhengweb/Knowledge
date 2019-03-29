@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        let json = {a:1};
+        let json2 = {b:2, a:2};
+        let json3 = {c:3};
+
+        let obj = Object.assign({}, json, json2,json3);
+
+        console.log(obj);//{a:2,b:2,c:3} 注意：后面的对象属性会覆盖前面的属性，可以用Object.assign()方法合成对象
+    </script>
+</head>
+<body>
+</body>
+</html>

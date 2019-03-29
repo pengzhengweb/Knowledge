@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>预编译if执行顺序函数体函数声明区别</title>
+	</head>
+	<script>
+		
+		//console.log(yideng===undefined);//true
+		yideng();//Error:yideng is a not funciton
+		var flag = true;
+		if(flag){
+			 function yideng(){
+				console.log("yideng1");
+			}
+		}else{
+			function yideng(){
+				console.log("yideng2");
+			}
+		}
+	</script>
+	<!--<script>
+		console.log(a);//undefined
+        if(false){
+              var a = 1
+           }
+	</script>-->
+	<body>
+	</body>
+</html>

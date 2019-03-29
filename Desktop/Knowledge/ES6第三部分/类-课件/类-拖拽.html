@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            background: red;
+            position: absolute;
+            top:0;
+        }
+        .left{
+            left:0;
+        }
+        .right{
+            right:0;
+        }
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+    <div id="div1" class="box left">DIV1</div>
+    <div id="div2" class="box right">DIV2</div>
+
+    <script>
+        //普通拖拽 -- 父类
+        class Drag{
+            constructor(id){
+                this.oDiv = document.querySelector(id);
+                this.disX = 0; 
+                this.disY = 0;
+                this.init();
+            }
+            init(){
+                this.oDiv.onmousedown = function(ev){
+                    this.disX = ev.clientX - this.oDiv.offsetLeft;
+                    this.disY = ev.clientY - this.oDiv.offsetTop;
+
+                    document.onmousemove = this.fnMove.bind(this);
+                    document.onmouseup = this.fnUp.bind(this);
+
+                    return false;
+                }.bind(this);
+            }
+            fnMove(ev){
+                this.oDiv.style.left = ev.clientX - this.disX+'px';
+                this.oDiv.style.top = ev.clientY - this.disY+'px';
+            }
+            fnUp(){
+                document.onmousemove=null;
+                document.onmouseup=null;
+            }
+        }
+
+        //子类—— 限制范围
+        class LimitDrag extends Drag{
+            fnMove(ev){
+                super.fnMove(ev);
+
+                //限制范围
+                if(this.oDiv.offsetLeft<=0){
+                    this.oDiv.style.left =0;
+                }
+            }
+        }
+
+        //调用
+        new Drag('#div1');
+        new LimitDrag('#div2');
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        const Person = class{
+            constructor(name,age){ //构造方法(函数), 调用new，自动执行
+                //console.log(`构造函数执行了, ${name}, ${age}`);
+                this.name = name;
+                this.age = age;
+            }
+            showName(){
+                return `名字为: ${this.name}`;
+            }
+            showAge(){
+                return `年龄: ${this.age}`;
+            }
+        }
+        let p1 = new Person('Strive', 18);
+        console.log(p1.showName(), p1.showAge());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

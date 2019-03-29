@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    // function test(){
+    //   var b = 2;   
+    //  function b(){}
+    //   console.log(b);//2  先与便于，然后开始执行了
+    // }
+    // test();
+
+    function test1(b){
+       if(true){
+           function b(){}//此时是函数表达式，并不少函数声明，所以不会存在提升
+       }
+       console.log(b);//是2！，注意：如果没有形参的话，就是function
+    }
+    test1(2);
+ 
+    function test1(b){
+      
+        function b(){}
+       
+       console.log(b);//function
+    }
+    test1(2);
+
+
+</script>
+<body>
+    
+</body>
+</html>

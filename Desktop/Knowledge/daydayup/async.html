@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    async function isAsync(){
+        console.log(0);
+        return new Promise( (resolve,reject)=>{
+            setTimeout( ()=>{
+                console.log(1);
+                resolve();
+            },1000);
+        });
+        //console.log(3);
+    }
+
+    isAsync().then(n=>{
+        console.log('完成');
+    })
+</script>
+<body>
+    
+</body>
+</html>
+

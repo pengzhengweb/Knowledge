@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全屏显示</title>
+</head>
+<style>
+    .needElement:-webkit-full-screen{
+       width:100vw;
+       height:100vh;
+       color:papayawhip;
+       background-color: black;
+    }
+</style>
+<script>
+    const requestFullScreen = (element) =>{
+        const root = document.documentElement;
+        const fullScreen = root.requestFullscreen ||root.webkitRequestFullscreen || root.mozRequestFullScreen || root.msRequestFullscreen;
+        fullScreen.call(element);
+    };
+</script>
+
+<body>
+    
+</body>
+</html>

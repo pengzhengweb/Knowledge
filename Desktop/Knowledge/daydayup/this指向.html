@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script >
+      var out = 25,
+      inner = {
+          out:20,
+          func:function(){
+              var out = 30;
+              return this.out;
+          }
+      };
+
+      console.log( (inner.func,inner.func)() );
+
+      console.log( inner.func() );//20
+
+      console.log( (inner.func)() );//20 注意：()仅仅表示优先级，所以和上面一样
+
+      console.log( inner.func = inner.func() )
+
+      console.log( (inner.func = inner.func)() )
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

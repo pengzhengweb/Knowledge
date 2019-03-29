@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        let str = '2018-03-20';
+
+        let reg = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/;
+
+        str = str.replace(reg, (...args)=>{
+            //console.log(args)
+            let {year, month, day} = args[args.length-1];
+
+            return `${day}/${month}/${year}`;
+        });
+
+        console.log(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

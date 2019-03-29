@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script>
+        let data =[
+            {title:'记习近平瑞士发表人类命运共同体演讲一周年', read:100},
+            {title:'习近平关心！刚刚，良渚古城遗址正式申报世界遗产', read:9},
+            {title:'党中央国务院决定了!在全国开展扫黑除恶专项斗争', read:10},
+            {title:'宪法修改必须依法按程序进行', read:180},
+            {title:'新时代的中共全面从严治党 北京两会  新时代新气象', read:900}
+        ]
+        window.onload = function(){
+            let oUl = document.querySelector('#ul1');
+
+            for(let i=0; i<data.length; i++){
+                var oLi = document.createElement('li');
+
+                oLi.innerHTML='<span>'+data[i].title+'</span>'
+                    +'<span>阅读人数:'+data[i].read+'</span>'
+                    +'<a href="javascript:;">详情</a>';
+                oUl.appendChild(oLi);
+            }
+        };
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+        <!-- <li>
+            <span>这是新闻的标题</span>
+            <span>阅读人数:10</span>
+            <a href="javascript:;">详情</a>
+        </li> -->
+    </ul>
+</body>
+</html>

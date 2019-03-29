@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+//		let a = 1;
+//		function show(){
+//			console.log("let的时候:" + a);//1
+//		}
+//		show();
+		
+//		const a = 1;
+//		function show(){
+//			console.log("const的时候：" + a);//1
+//		}
+//		show();
+		
+		const a = 1;
+		function show(){
+			console.log("const 在innner的时候：" + a);//a is not defined
+			const a = 2;
+		}
+		show();
+	</script>
+	<body>
+	</body>
+</html>

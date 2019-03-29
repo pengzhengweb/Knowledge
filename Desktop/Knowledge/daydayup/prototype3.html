@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+ <script>
+     var A = function(){};
+     A.prototype = {};
+     var a = new A();
+     A.prototype = {};//地址的指向发生改变
+     var b = new A();
+     console.log(a instanceof A);//false
+     console.log(b instanceof A);//true
+ </script>
+<body>
+    
+</body>
+</html>

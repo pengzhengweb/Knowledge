@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script>
+		let yideng = {x : 1, y : 2};
+	let objWithGetter = {...yideng,get x(){ throw new Error() } };
+		console.log(objWithGetter);
+		
+		let yideng = {x : 1, y : 2};
+		let objWithGetter = {...yideng,...{get x(){ throw new Error() } } };
+		//console.log(objWithGetter);
+	</script>
+	<body>
+	</body>
+</html>

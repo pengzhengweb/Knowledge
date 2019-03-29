@@ -1,0 +1,25 @@
+!<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <script>
+        var a = "yideng1";
+        function test(){
+            var a = "yideng2";
+             this.a = "yideng3";
+            var init = new Function(console.warn(a));
+            init();
+        }
+
+        test();//yideng2
+        console.log(a);//yideng3
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

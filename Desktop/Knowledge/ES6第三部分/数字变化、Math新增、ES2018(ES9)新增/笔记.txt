@@ -1,0 +1,141 @@
+数字(数值)变化:
+	二进制:  (Binary)
+		let a = 0b010101;
+	八进制: (Octal)
+		let a = 0o666;
+	
+	十六进制:
+		#ccc
+	-------------------------------------------
+	Nunber()、parseInt()、 parseFloat()
+	-------------------------------------------
+
+	Number.isNaN(NaN)	-> true
+
+	Number.isFinite(a)   判断是不是数字	√
+
+	Number.isInteger(a)  判断数字是不是整数	√
+
+	-------------------------------------------
+	Number.parseInt();
+	Number.parseFloat();
+-------------------------------------------
+安全整数:
+	2**3
+
+	安全整数:    -(2^53-1) 到 (2^53-1),   包含-(2^53-1) 和(2^53-1)
+
+	Number.isSafeInteger(a);
+
+	Number.MAX_SAFE_INTEGER	最大安全整数
+	Number.MIN_SAFE_INTEGER	最小安全整数
+
+--------------------------------------------------------------------------------------
+Math:
+	Math.abs()
+	Math.sqrt()
+	Math.sin()
+
+	Math.trunc()	截取，只保留整数部分
+		Math.trunc(4.5)  ->  4
+		Math.trunc(4.9)  ->  4
+
+	Math.sign(-5)   判断一个数到底是正数、负数、0
+		Math.sign(-5)  ->  -1
+		Math.sign(5)  -> 1
+		Math.sign(0)	->  0
+		Math.sign(-0)	->  -0
+		其他值，返回 NaN
+	
+	Math.cbrt()	计算一个数立方根
+
+		Math.cbrt(27)  ->  3
+
+	.......
+-------------------------------------------------------
+ES2018(ES9):
+	1. 命名捕获
+		语法:  (?<名字>)
+
+		let str = '2018-03-20';
+		let reg = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/;
+		let {year, month ,day} = str.match(reg).groups;
+		console.log(year, month, day);
+	反向引用:
+		\1  \2     $1  $2
+	反向引用命名捕获:
+		语法:  \k<名字>
+
+		let reg = /^(?<Strive>welcome)-\k<Strive>$/;
+
+		匹配: ‘welcome-welcome’
+
+		-------------------------------------------------
+
+		let reg = /^(?<Strive>welcome)-\k<Strive>-\1$/;
+
+		匹配: 'welcome-welcome-welcome'
+
+	替换:
+		$<名字>
+
+		let reg = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/;
+		str = str.replace(reg,'$<day>/$<month>/$<year>');
+		console.log(str);
+
+		----------------------------------------
+		str = str.replace(reg, (...args)=>{
+			//console.log(args)
+			let {year, month, day} = args[args.length-1];
+
+			return `${day}/${month}/${year}`;
+		});
+
+		console.log(str);
+
+	2.   dotAll 模式	s
+
+		之前 '.' 在正则里表示匹配任意东西， 但是不包括 \n 
+	
+	   let reg = /\w+/gims;
+
+	3. 标签函数
+		function fn(){
+
+		}
+
+		fn()  //这样调用就是普通函数
+
+		fn`aaa`  //标签函数使用
+
+		-----------------------------------
+		function fn(args){
+			return args[0].toUpperCase();
+		}
+
+		console.log(fn`welcome`);
+	
+
+
+	
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+	
+		

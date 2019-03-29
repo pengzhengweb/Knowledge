@@ -1,0 +1,63 @@
+!<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>clone Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <script >
+        // function clone(child,parent){
+        //     var child = child||{};
+        //     for(var prop in parent){
+        //         if(parent.hasOwnProperty(prop)){
+        //             child[prop] = parent[prop];
+        //         }
+        //     }
+        //return child;
+        // }
+
+        // var child ={};
+        // var parent = {
+        //     name:"Asdas",
+        //     age:123,
+        //     arr:["sds","Sds"]
+        // }
+        // clone(child,parent);
+        // console.log(child);
+        // parent.arr.push("qwewrwerrwr");
+        // console.log(child);//紧跟着parent的属性改变
+   
+
+    function deepClone(child,parent){
+        var child = child||{};
+        for(var prop in parent){
+          if(parent.hasOwnProperty(prop)){
+            if(typeof(parent[prop]) === "object"){//
+              child[prop] = (parent[prop].constructor === Array?[]:{});
+             deepClone(child[prop],parent[prop]);//深度clone的递归，改变引用，让child也有这自己的指向
+            }else{
+                child[prop]= parent[prop];
+            }
+          }
+        }
+        return child;
+        console.log("asdasd");
+    }
+
+     var child ={};
+     var parent = {
+                    name:"Asdas",
+                    age:123,
+                    arr:["sds","Sds"]
+                };
+        deepClone(child,parent);
+        console.log(child);
+        parent.arr.push("qwewrwerrwr");
+        console.log(child.arr);//不会紧跟着parent的属性改变
+</script>
+</head>
+<body>
+    
+</body>
+</html>

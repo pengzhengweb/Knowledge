@@ -1,0 +1,133 @@
+async await
+-------------------------------------
+数据结构
+	数组
+	json， 二叉树....
+
+set数据结构:
+	类似数组，但是里面不能有重复值
+
+let arr  = ['a','b','a'];
+
+let arr = new Array();
+
+set用法:
+	let setArr = new Set(['a','b']);
+
+	setArr.add('a');   往setArr里面添加一项
+	setArr.delete('b');	删除一项
+	setArr.has('a')	判断setArr里面有没有此值
+	setArr.size	个数
+
+	setArr.clear();	清空
+
+
+for...of...
+
+	循环:
+		a). for(let item of setArr){  //默认是values()
+		            console.log(item);
+		        }
+		b). for(let item of setArr.keys()){console.log(item);}
+		c). for(let item of setArr.values()){}
+		d). for(let [k,v] of setArr.entries()){}
+		
+		e). setArr.forEach((value,index) =>{
+		            console.log(value, index);
+		        });
+
+let setArr = new Set().add('a').add('b').add('c');
+
+数组去重:
+	let arr = [1,2,3,4,5,6,7,6,5,4,3,2,1,2,3,4,4];
+	let newArr = [...new Set(arr)];
+	console.log(newArr);
+
+set数据结构变成数组:
+	[...set]
+
+想让set使用数组的，map循环和filter:
+	
+--------------------------------------------------------------
+
+let arr = [{},{}];
+--------------------------------------------------------------
+new Set([]);	存储数组， 这种写法对
+
+new WeakSet({})	存储json，这种写法不靠谱
+
+	WeakSet没有size，也没有clear()
+
+	有， add(), has(), delete()
+
+确认，初始往里面添加东西，是不行的。最好用add添加
+--------------------------------------------------------------
+总结: new Set()
+--------------------------------------------------------------
+
+let json ={
+	p1:1,
+	b:2
+};
+
+--------------------------------------------------------------
+map:
+	类似 json, 但是json的键(key)只能是字符串
+
+	map的key可以是任意类型
+
+使用:
+	let map = new Map();
+
+	map.set(key,value);    设置一个值
+
+	map.get(key)	获取一个值
+
+	map.delete(key)	删除一项
+	
+	map.has(key)	判断有没有
+
+	map.clear()	清空
+
+循环:
+	for(let [key,value] of map){}
+
+	for(let key of map.keys()){}
+
+	for(let value of map.values()){}
+
+	for(let [k,v] of map.entries()){}
+
+	map.forEach((value, key) =>{
+	    console.log(value, key);
+	})
+
+WeakMap():  key只能是对象
+
+------------------------------------------------------------
+总结：
+	Set   里面是数组，不重复，没有key，没有get方法
+	Map 对json功能增强，key可以是任意类型值
+
+------------------------------------------------------------
+	
+
+	
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+

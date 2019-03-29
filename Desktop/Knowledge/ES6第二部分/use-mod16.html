@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>51牧码人——http://www.51mmr.net 专注[前端+Java],人才培养</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+    <script type="module">
+        async function main(){
+            const mod1 = await import('./modules/1.js');
+            const mod2 = await import('./modules/2.js');
+            console.log(mod1, mod2);
+            const [m1,m2] = await Promise.all([
+                import('./modules/1.js'),
+                import('./modules/2.js')
+            ]);
+
+            console.log(m1,m2);
+        }
+
+        main();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

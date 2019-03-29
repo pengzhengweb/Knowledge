@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>use strict</title>
+</head>
+<script>
+    function testArg(first,second){
+         //"use strict"
+        console.log(first === arguments[0]); //true
+        console.log(second === arguments[1]);//true
+
+        first = "c";
+        second = 'd';
+        console.log(first === arguments[0]);//true   false
+        console.log(second === arguments[1]);//true  false
+        console.log(arguments); //"c","d"
+
+    }
+
+    testArg("a","b");
+</script>
+
+<body>
+    
+</body>
+</html>

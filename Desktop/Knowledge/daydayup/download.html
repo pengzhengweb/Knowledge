@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于如何下载文件</title>
+</head>
+
+     <!-- 首先有个H5的方法,a标签有个download的属性 -->
+    <a href="http://somehost/somefile.zip" download="filename.zip">下载文件</a>
+    <!-- 看看上面的代码，只要为 <a> 标签添加 download 属性，我们点击这个链接的时候就会自动下载文件了~
+            顺便说下，download 的属性值是可选的，它用来指定下载文件的文件名。像上面的例子中，
+            我们下载到本地的文件名就会是 filename.zip 拉，
+            如果不指定的话，它就会是 somefile.zip 这个名字拉！ -->
+
+
+  <script>
+      var a = document.createElement('a');
+      var url = window.URL.createObjectURL(blob);
+      var filename = "what-you-want.txt";
+      a.href = url;
+      a.download = filename;
+      a.click();
+      window.URL.revokeObjectURL(url);
+  </script>
+  <!-- 
+      事实上，用 JavaScript 来下载文件也是利用这一特性来实现的，我们的 JavaScript 代码不外乎就是：
+        用 JavaScript 创建一个隐藏的 <a> 标签
+        设置它的 href 属性
+        设置它的 download 属性
+        用 JavaScript 来触发这个它的 click 事件
+        -->
+
+<body>
+    
+</body>
+</html>

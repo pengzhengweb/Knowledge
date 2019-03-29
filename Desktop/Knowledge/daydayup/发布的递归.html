@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<script>
+    const loop = (arr)=>{
+      return <ul className="node_list">
+                    <NodeCircle data={arr} firstNode={firstNode}/>
+                    {arr[0].children&&<NodeCircle data={arr[0].children} firstNode={firstNode}/>}
+                    {arr[0].children[0].children&& <NodeCircle data={arr[0].children[0].children} firstNode={firstNode}/>}
+                 <Button id="stopBtn" type="danger" className={buttonStyle} icon="close-circle" onClick={self.stopPublishing}>停止发布</Button>         
+            </ul>;
+    };
+    const loop1 = (arr)=>{
+      let div = <ul className="node_list">
+                    <NodeCircle data={arr} firstNode={firstNode}/>
+                    <Button id="stopBtn" type="danger" className={buttonStyle} icon="close-circle" onClick={self.stopPublishing}>停止发布</Button>         
+                </ul>;
+      if(arr[0].children){
+          let arrChildren = arr[0];
+          let insertDiv = `<NodeCircle data={arrChildren.children} firstNode={firstNode}/>`;
+          let stopBtn = document.getElementById('stopBtn');
+          stopBtn.insertAdjacentHTML(`beforeend`,insertDiv);
+
+      }
+      let arr = arrChildren;
+      loop1(arr);
+      return div;
+    }
+</script>
+<body>
+    
+</body>
+</html>

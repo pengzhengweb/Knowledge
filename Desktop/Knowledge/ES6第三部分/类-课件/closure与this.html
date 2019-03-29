@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    var name = "window";
+
+var p = {
+  name: 'Perter',
+  getName: function() {
+
+    // 利用变量保存的方式保证其访问的是p对象
+    var self = this;
+    return function() {
+      return self.name;
+    }
+  }
+}
+
+var getName = p.getName();
+var _name = getName();
+console.log(_name);
+</script>
+<body>
+    
+</body>
+</html>

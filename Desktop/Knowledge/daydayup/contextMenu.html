@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>contextMenu</title>
+</head>
+<script>
+ function initElement()
+ {
+ var p = document.getElementById("foo");
+ // 注意:这里写成showAlert()或者 showAlert(参数)是不对的.
+ // 必须是一个函数名,而不是函数调用.
+ p.ondblclick = showAlert;
+ };
+
+function showAlert()
+ {
+ alert("检测到dblclick事件!")
+ }
+</script>
+
+<style type="text/css">
+<!--
+#foo {
+border: solid blue 2px;
+}
+-->
+</style>
+</head>
+
+<body onload="initElement()";>
+<span id="foo">这是一个元素</span>
+<p>双击上面的元素会触发dblclick事件.</p>
+</body>
+</html>
