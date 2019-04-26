@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //     console.log("1");//1
+        //     setTimeout(()=>{
+        //         console.log("4");//4
+        //     },0);
+        //  new Promise(resolve=>{
+        //     resolve("3")
+        // }).then(res=>{
+        //     console.log(res);//3
+        // })
+        // console.log("2");//2
+
+
+
+        // setTimeout(function () {
+        //     console.log("will be executed at the top of the next Event Loop")
+        // }, 0)
+        // var p1 = new Promise(function (resolve, reject) {
+        //     // setTimeout(() => { resolve(1); }, 0);
+        //     resolve(1);
+        // });
+        // setTimeout(function () {
+        //     console.log("will be executed at the bottom of the next Event Loop")
+        // }, 0)
+        // for (var i = 0; i < 3; i++) {
+        //     (function (j) {
+        //         p1.then(function (value) {
+        //             console.log("promise then - " + j)
+        //         });
+        //     })(i)
+        // }
+
+
+        setTimeout(function () {
+            console.log(4)
+        }, 0);
+        new Promise(function (resolve) {
+            console.log(1)
+            for (var i = 0; i < 10000; i++) {
+                i == 9999 && resolve()
+            }
+            console.log(2)
+        }).then(function () {
+            console.log(5)
+        });
+        console.log(3);
+        //1 2 3 5 4
+    </script>
+
+</body>
+
+</html>

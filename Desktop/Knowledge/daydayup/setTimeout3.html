@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    setTimeout(() => {
+  console.log('timer1')//3
+  Promise.resolve().then(function() {
+    console.log('timer1-promise1')//4
+  })
+}, 0)
+setTimeout(() => {
+  console.log('timer2')//5
+  Promise.resolve().then(function() {
+    console.log('timer2-promise2')//6
+  })
+}, 0)
+Promise.resolve().then(function() {
+  console.log('promise3')//2
+})
+console.log('end')//1
+
+
+
+    //  setTimeout( ()=>{
+    //     console.log('setTimeout5');//3
+    //     Promise.resolve().then( ()=>{
+    //         console.log('Promise6');//4
+    //     })
+    // },0)
+
+    // Promise.resolve().then( ()=>{
+    //     console.log('Promise1');//1
+
+    //     setTimeout( ()=>{
+    //         console.log('setTimeout2');//7
+    //         Promise.resolve().then( ()=>{
+    //             console.log('Promise3');//8
+    //         })
+    //     },0)
+
+    //     setTimeout( ()=>{
+    //         console.log('setTimeout3');//9
+    //         Promise.resolve().then( ()=>{
+    //             console.log('Promise5');//10
+    //         })
+    //     },0)
+
+    //     Promise.resolve().then( ()=>{
+    //             console.log('Promise4');//2
+    //         })
+       
+    // })
+
+
+    // setTimeout( ()=>{
+    //     console.log('setTimeout1');//5
+    //     Promise.resolve().then( ()=>{
+    //         console.log('Promise2');//6
+    //     })
+    // },0)
+
+</script>
+
+<!-- Promise1
+    Promise4
+    setTimeout5
+Promise6
+setTimeout1
+Promise2
+setTimeout2
+Promise3
+setTimeout3
+Promise5
+ -->
+<body>
+    
+</body>
+</html>
