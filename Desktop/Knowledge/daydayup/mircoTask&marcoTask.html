@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    // setImmediate(function() {
+    //     console.log(1);
+    // });
+
+    setTimeout(function() {
+        console.log(2);
+    });
+
+    // process.nextTick(function() {
+    //     console.log(3);
+    //     process.nextTick(function() {
+    //         console.log(4);
+    //     })
+    // });
+
+    new Promise(function exectur(resolve) {
+        console.log(5);
+        for (var i = 0;i < 1000; i++){
+            i == 9999 && resolve();
+        }
+        console.log(6);
+    }).then(function() {
+        console.log(7);
+    });
+    console.log(8);
+</script>
+<body>
+    
+</body>
+</html>
