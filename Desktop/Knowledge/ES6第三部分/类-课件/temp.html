@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    var arr = [{
+            "certId": "CujdpzD3",
+            "name":"a",
+            "time":"2019-05-09T01:10:09+08:00",
+            "loadBalancers": [{
+                "LoadBalancerId": "lb-ac1hiexv",
+                "Forward": 0
+            }, {
+                "LoadBalancerId": "lb-0pikg7pf",
+                "Forward": 0
+            }, {
+                "LoadBalancerId": "lb-madflkh1",
+                "Forward": 1
+            }, {
+                "LoadBalancerId": "lb-afyqjqnh",
+                "Forward": 1
+            }, {
+                "LoadBalancerId": "lb-man9tfk7",
+                "Forward": 1
+            }, {
+                "LoadBalancerId": "lb-9rzfvtv1",
+                "Forward": 1
+            }, {
+                "LoadBalancerId": "lb-5ho0usw9",
+                "Forward": 1
+            }, {
+                "LoadBalancerId": "lb-rzaisuf9",
+                "Forward": 1
+            }, {
+                "LoadBalancerId": "lb-hvak8hop",
+                "Forward": 1
+            }, {
+                "LoadBalancerId": "lb-9k22xsoz",
+                "Forward": 1
+            }, {
+                "LoadBalancerId": "lb-hs44zmyx",
+                "Forward": 1
+            }, {
+                "LoadBalancerId": "lb-f5wvk7t9",
+                "Forward": 1
+            }]
+        }, {
+            "certId": "MJMllM4M",
+            "name":"b",
+            "time":"2019-05-10T01:10:09+08:00",
+            "loadBalancers": [{
+                "LoadBalancerId": "lb-o580stph",
+                "Forward": 0
+            }]
+        }];
+    var tableData = arr.map(item => {
+            const arrChildTmp = [];
+            item.loadBalancers.forEach(i => {
+              
+              arrChildTmp.push(i.LoadBalancerId);
+            });
+            const objChildTmp = {};
+            objChildTmp['certId'] = item.certId;
+            objChildTmp['name'] = item.name;
+             objChildTmp['time'] = new Date(item.time).toLocaleString();
+            objChildTmp['loadBalancers'] = [...arrChildTmp];
+            return objChildTmp;
+    });
+    console.log(tableData);
+</script>
+<body>
+    
+</body>
+</html>
