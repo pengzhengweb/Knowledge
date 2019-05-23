@@ -3,6 +3,7 @@ function getDays() {
     date.setMonth(date.getMonth() + 1);
     date.setDate(0);
     var days = date.getDate();
+    console.log("days:" + days);
     return days;
 }
 
