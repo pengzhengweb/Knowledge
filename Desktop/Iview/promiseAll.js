@@ -8,7 +8,7 @@ function promiseall(promises) {
         var resloveValues = new Array(promiseLength);
         for (var i = 0; i < promiseLength; i++) {
             (function(i) {
-                Promise.resolve(promise[i]).then(function(value) {
+                Promise.resolve(promises[i]).then(function(value) {
                     resolveCount++;
                     resloveValues[i] = value;
                     if (resolveCount == promiseLength) {
