@@ -27,6 +27,7 @@ function MyPromise(executor) {
                 fn()
             })
         }
+        executor(resolve, reject) // 因为会立即执行这个执行器函数
     }
 }
 
