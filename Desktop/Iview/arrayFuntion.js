@@ -9,6 +9,16 @@ Array.prototype.newMap = function(fn) {
 var arr = [1, 2, 3, 4];
 arr.newMap(item => item + 1);
 
+
+
+Array.prototype.newMap = function(fn) {
+    var result = [];
+    for (var i = 0; i < this.length; i++) {
+        result.push(fn(this[i], i, this));
+    }
+    return result;
+}
+
 // Array.prototype.newwMap = function(fn) {
 //     this.reduce((perv, curr, i, this) => perv.push(fn(curr, i, this)), []);
 // }
@@ -16,6 +26,16 @@ arr.newMap(item => item + 1);
 // arr.newMap(item => item + 1);
 
 //filter
+Array.prototype.newFilter = function(fn) {
+    var result = [];
+    for (var i = 0; i < this.length; i++) {
+        if (fn(this[i])) {
+            result.push(this[i])
+
+        }
+    }
+    return result;
+}
 Array.prototype.newfilter = function(fn) {
     var newArr = [];
     for (var i = 0; i < this.length; i++) {

@@ -24,4 +24,4 @@ var mergeArray = function(arr1, arr2) {
     console.log(result);
     return result;
 };
-mergeArray([1, 23, 56, 79, 100], [1, 2, 6, 7, 9, 24, 57, 80, 120]);
+mergeArray([1, 3, 23, 56, 79, 100], [1, 2, 6, 7, 9, 24, 57, 80, 120]);
