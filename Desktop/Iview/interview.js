@@ -1,7 +1,7 @@
+let count = 0;
 query().then(res => {
     console.log(res); //{state:1,data:{}}
 }, (res) => {
-    let count = 0;
     const interval = 3000;
 
     let loop = () => {
@@ -9,8 +9,6 @@ query().then(res => {
             query()
         }, interval)
     };
-
-    loop();
 
     if (res.state === 0) {
         count++;
