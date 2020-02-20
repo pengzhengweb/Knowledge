@@ -6,6 +6,7 @@ function addLabel(tree) {
         } else {
             res = `${current}`
         }
+
         return flag ? `(${res})` : res
     }
 
@@ -13,12 +14,12 @@ function addLabel(tree) {
         items.forEach((item, i) => {
             result.push(tool(index, i + 1) + item.name);
             if (item.children) {
-                getTitle(item.children, result, tool(index, i + 1, false))
+                getTitle(item.children, result, tool(index, i + 1, false));
             }
         })
         return result;
     }
-    return getTitle(tree.children || [], [tree.name])
+    return getTitle(tree.children || [], [tree.name]);
 }
 var chapterTree = {
     name: '总章节',
