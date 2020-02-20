@@ -10,6 +10,7 @@ var twoSum = function(nums, target) {
         })
 
     })
+    console.log(Array.from(new Set(result)));
     return Array.from(new Set(result));
 
 };
